@@ -1,20 +1,22 @@
 import React from "react";
 import {
+  Address,
   FooterLink,
   InfoColumn,
+  InfoContainer,
   InfoDescription,
-  InfoFooter,
   InfoRow,
   InfoTitle,
 } from "./footer.styles";
 import PhoneIcon from "../../assets/icons/phone.svg";
 import EmailIcon from "../../assets/icons/email.svg";
 import ArrowRight from "../../assets/icons/arrow-right.svg";
+import LogoPrefeiura from "../../assets/images/logo-prefeitura.svg";
 
 export function Footer() {
   return (
     <>
-      <InfoFooter>
+      <InfoContainer background={"blue"}>
         <InfoColumn>
           <InfoTitle>Horário de atendimento</InfoTitle>
           <InfoDescription>
@@ -39,14 +41,23 @@ export function Footer() {
         <InfoColumn>
           <InfoTitle>Ouvidoria</InfoTitle>
           <InfoDescription>
-            Nossa prefeitura quer te ouvir! <br/> Deixe suas críticas e sugestões.
+            Nossa prefeitura quer te ouvir! <br /> Deixe suas críticas e
+            sugestões.
           </InfoDescription>
           <InfoRow>
             <FooterLink href="/ouvidoria">Acessar Ouvidoria</FooterLink>
             <img src={ArrowRight} alt="Ouvidoria" />
           </InfoRow>
         </InfoColumn>
-      </InfoFooter>
+      </InfoContainer>
+      <InfoContainer background="white" alignCenter>
+        <img src={LogoPrefeiura} alt="Prefeitura" width={200} />
+        <Address>
+          <strong>Prefeitura Municipal de Antônio Prado</strong> <br />
+          Rua Francisco Marcantônio, 57 - Antônio Prado - Rio Grande do Sul -
+          CEP: 95250-000
+        </Address>
+      </InfoContainer>
     </>
   );
 }
