@@ -1,7 +1,23 @@
 import React from "react";
-import { Button, Row, SiteInfo } from "./header.styles";
+import {
+  Button,
+  Container,
+  HeaderWrapper,
+  Logo,
+  MediaButton,
+  MediaButtons,
+  Nav,
+  Row,
+  SearchInput,
+  SiteInfo,
+} from "./header.styles";
 import SiteMap from "../../assets/icons/site-map.svg";
+import Instagram from "../../assets/icons/instagram.svg";
+import Facebook from "../../assets/icons/facebook.svg";
+import Youtube from "../../assets/icons/youtube.svg";
+import Search from "../../assets/icons/search.svg";
 import Accessibility from "../../assets/icons/accessibility.svg";
+import LogoPref from "../../assets/images/logo-prefeitura.svg";
 
 export function Header() {
   return (
@@ -23,6 +39,27 @@ export function Header() {
           </Button>
         </Row>
       </SiteInfo>
+      <HeaderWrapper>
+        <Container style={{ justifyContent: "flex-start" }}>
+          <SearchInput placeholder="Buscar no site" />
+          <img className="search-icon" alt="Procurar" src={Search} />
+        </Container>
+        <Container style={{ justifyContent: "center" }}>
+          <Logo src={LogoPref} alt="Prefeitura de Aracruz" />
+        </Container>
+        <MediaButtons>
+          <MediaButton>
+            <img src={Facebook} alt="instagram" />
+          </MediaButton>
+          <MediaButton>
+            <img src={Instagram} alt="instagram" />
+          </MediaButton>
+          <MediaButton>
+            <img src={Youtube} alt="instagram" />
+          </MediaButton>
+        </MediaButtons>
+      </HeaderWrapper>
+      <Nav></Nav>
     </header>
   );
 }

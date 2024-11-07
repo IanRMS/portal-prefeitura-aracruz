@@ -8,10 +8,11 @@ body {
 
 :root {
   --primary: #2E3192;
+  --primary-light: #4145C5;
   --neutral: #1B1B1B;
   --neutral-light: #909090;
   --lightest: #fff;
   --gray-lightest: #FBFBFB;
   --gray-light: #E9E9E9;
-  
+
 }
