@@ -134,23 +134,3 @@ export const MediaButton = styled.button`
     background: var(--primary-light);
   }
 `;
-
-export const Nav = styled.nav`
-  display: flex;
-  flex-direction: row;
-  width: calc(100vw - 320px);
-  border-bottom: 1px solid;
-  border-color: var(--gray-light);
-  padding: 32px 160px;
-
-  @media (max-width: 960px) {
-    width: calc(100vw - 80px);
-    padding: 8px 40px;
-    flex-direction: column;
-  }
-
-  @media (max-width: 768px) {
-    width: calc(100vw - 40px);
-    padding: 8px 20px;
-  }
-`;

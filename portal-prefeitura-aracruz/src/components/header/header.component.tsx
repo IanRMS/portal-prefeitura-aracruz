@@ -6,7 +6,6 @@ import {
   Logo,
   MediaButton,
   MediaButtons,
-  Nav,
   Row,
   SearchInput,
   SiteInfo,
@@ -59,7 +58,6 @@ export function Header() {
           </MediaButton>
         </MediaButtons>
       </HeaderWrapper>
-      <Nav></Nav>
     </header>
   );
 }
