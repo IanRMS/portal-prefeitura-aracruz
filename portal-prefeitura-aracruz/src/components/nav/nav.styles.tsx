@@ -11,9 +11,8 @@ export const Nav = styled.nav`
     padding: 0px 20px;
   }
 
-  @media (max-width: 768px) {
-    width: calc(100vw - 40px);
-    padding: 0px 20px;
+  @media (max-width: 720px) {
+    display: none;
   }
 `;
 

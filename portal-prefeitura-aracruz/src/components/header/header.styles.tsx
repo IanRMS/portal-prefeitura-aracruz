@@ -53,6 +53,7 @@ export const HeaderWrapper = styled.div`
   justify-content: space-between;
   gap: 24px;
   border-bottom: 1px solid var(--gray-light);
+  position: relative;
 
   @media (max-width: 960px) {
     width: calc(100vw - 160px);
@@ -109,7 +110,7 @@ export const MediaButtons = styled.div`
   flex: 1;
   justify-content: flex-end;
 
-  @media (max-width: 698px) {
+  @media (max-width: 720px) {
     display: none;
   }
 `;
@@ -132,5 +133,23 @@ export const MediaButton = styled.button`
 
   &:hover {
     background: var(--primary-light);
+  }
+`;
+
+export const SideMenuButton = styled.button`
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  border-radius: 28px;
+  width: 48px;
+  height: 48px;
+  border: none;
+  position: absolute;
+  right: 16px;
+  top: 12px;
+
+  @media (max-width: 720px) {
+    display: flex;
   }
 `;

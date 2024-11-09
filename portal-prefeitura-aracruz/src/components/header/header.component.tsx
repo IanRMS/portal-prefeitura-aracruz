@@ -8,6 +8,7 @@ import {
   MediaButtons,
   Row,
   SearchInput,
+  SideMenuButton,
   SiteInfo,
 } from "./header.styles";
 import SiteMap from "../../assets/icons/site-map.svg";
@@ -17,8 +18,18 @@ import Youtube from "../../assets/icons/youtube.svg";
 import Search from "../../assets/icons/search.svg";
 import Accessibility from "../../assets/icons/accessibility.svg";
 import LogoPref from "../../assets/images/logo-prefeitura.svg";
+import Menu from "../../assets/icons/menu.svg";
 
-export function Header() {
+interface HeaderProps {
+  showNavMenu: () => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ showNavMenu }) => {
+  const handleShowMenu = () => {
+    console.log("MOSTRA ESSA BUCETA");
+    showNavMenu();
+  };
+
   return (
     <header>
       <SiteInfo>
@@ -57,7 +68,10 @@ export function Header() {
             <img src={Youtube} alt="instagram" />
           </MediaButton>
         </MediaButtons>
+        <SideMenuButton onClick={() => handleShowMenu()}>
+          <img src={Menu} alt="" />
+        </SideMenuButton>
       </HeaderWrapper>
     </header>
   );
-}
+};

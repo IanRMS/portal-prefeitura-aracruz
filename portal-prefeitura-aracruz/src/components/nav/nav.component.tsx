@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 
-import { navItems } from "./nav-items";
+import { navItems } from "../../utils/nav-items";
 import {
   Nav,
   NavList,
