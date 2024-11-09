@@ -4,6 +4,7 @@ import {
   EasyNavigationCard,
   EasyNavigationContainer,
   Section,
+  SectionTitle,
 } from "../homePage.styles";
 import Book from "../../../assets/icons/book.svg";
 import Computer from "../../../assets/icons/computer.svg";
@@ -50,6 +51,7 @@ const EasyNavigationSection = () => {
 
   return (
     <Section>
+      <SectionTitle>Acesso rápido</SectionTitle>
       <EasyNavigationContainer>
         {items.map((item) => (
           <EasyNavigationCard
