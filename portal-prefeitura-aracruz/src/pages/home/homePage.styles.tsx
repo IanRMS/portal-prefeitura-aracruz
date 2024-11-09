@@ -50,6 +50,7 @@ export const MoreAccessedServicesContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 16px;
+  padding-top: 16px;
 
   @media (max-width: 960px) {
     grid-template-columns: 1fr 1fr;
@@ -87,14 +88,14 @@ export const MoreAccessedServiceDescription = styled.span`
   line-height: 24px;
 `;
 
-export const MoreAccessedServicesButtonContainer = styled.div`
+export const ShowMoreButtonContainer = styled.div`
   width: 100%;
-  padding: 16px;
+  margin-top: 32px;
   display: flex;
   justify-content: center;
 `;
 
-export const AllServicesButton = styled.button`
+export const ShowMoreButton = styled.button`
   background: none;
   padding: 16px 24px;
   border: 2px solid var(--primary);
@@ -107,4 +108,49 @@ export const AllServicesButton = styled.button`
   &:hover {
     background: var(--gray-lightest);
   }
+`;
+
+export const NewsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 16px;
+  gap: 24px;
+`;
+
+export const New = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  min-width: 264px;
+  cursor: pointer;
+`;
+
+export const NewImage = styled.img`
+  border-radius: 8px;
+  height: 176px;
+  width: 100%;
+  object-fit: cover;
+`;
+
+export const NewTheme = styled.span`
+  text-transform: uppercase;
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 14px;
+`;
+
+export const NewTitle = styled.span`
+  line-height: 30px;
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--neutral);
+`;
+
+export const NewDescription = styled.span`
+  color: var(--neutral-light);
+  font-size: 16px;
+  line-height: 24px;
 `;

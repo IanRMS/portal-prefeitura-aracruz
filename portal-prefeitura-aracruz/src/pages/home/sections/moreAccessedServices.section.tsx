@@ -1,13 +1,13 @@
 import React from "react";
 import {
-  AllServicesButton,
   MoreAccessedService,
   MoreAccessedServiceDescription,
-  MoreAccessedServicesButtonContainer,
   MoreAccessedServicesContainer,
   MoreAccessedServiceTitle,
   Section,
   SectionTitle,
+  ShowMoreButton,
+  ShowMoreButtonContainer,
 } from "../homePage.styles";
 import Document from "../../../assets/icons/services-icons/document.svg";
 import Money from "../../../assets/icons/services-icons/money-paper.svg";
@@ -102,11 +102,11 @@ const MoreAccessedServicesSection = () => {
           </MoreAccessedService>
         ))}
       </MoreAccessedServicesContainer>
-      <MoreAccessedServicesButtonContainer>
-        <AllServicesButton onClick={() => navigate("/services")}>
+      <ShowMoreButtonContainer>
+        <ShowMoreButton onClick={() => navigate("/services")}>
           Todos os serviços
-        </AllServicesButton>
-      </MoreAccessedServicesButtonContainer>
+        </ShowMoreButton>
+      </ShowMoreButtonContainer>
     </Section>
   );
 };
