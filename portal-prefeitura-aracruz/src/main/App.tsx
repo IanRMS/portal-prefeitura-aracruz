@@ -5,6 +5,7 @@ import { Footer } from "../components/footer/footer.component";
 import { Header } from "../components/header/header.component";
 import NavBar from "../components/nav";
 import SideMenuDrawer from "../components/sideMenuDrawer";
+import { PageContainer } from "../components/pageContainer";
 
 function App() {
   const [isShowingNavMenu, setIsShowingNavMenu] =
@@ -22,9 +23,9 @@ function App() {
         {isShowingNavMenu && (
           <SideMenuDrawer onClose={() => setIsShowingNavMenu(false)} />
         )}
-        <main>
+        <PageContainer>
           <AppRoutes />
-        </main>
+        </PageContainer>
       </BrowserRouter>
       <Footer />
     </>

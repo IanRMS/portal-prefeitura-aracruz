@@ -20,9 +20,8 @@ export function Footer() {
         <InfoColumn>
           <InfoTitle>Horário de atendimento</InfoTitle>
           <InfoDescription>
-            O funcionamento da Prefeitura Municipal de Antônio Prado é de
-            Segunda à Sexta-feira na parte da manhã das 8h às 11:45 e das 13:15
-            às 17h.
+            O funcionamento da Prefeitura Municipal de Aracruz é de Segunda à
+            Sexta-feira na parte da manhã das 8h às 11:45 e das 13:15 às 17h.
           </InfoDescription>
         </InfoColumn>
         <InfoColumn>
@@ -53,9 +52,8 @@ export function Footer() {
       <InfoContainer background="white" alignCenter>
         <img src={LogoPrefeiura} alt="Prefeitura" width={200} />
         <Address>
-          <strong>Prefeitura Municipal de Antônio Prado</strong> <br />
-          Rua Francisco Marcantônio, 57 - Antônio Prado - Rio Grande do Sul -
-          CEP: 95250-000
+          <strong>Prefeitura Municipal de Aracruz</strong> <br />
+          Av. Morobá, 20 - Conj. Moroba, Aracruz - ES, CEP: 29192-733
         </Address>
       </InfoContainer>
     </>
