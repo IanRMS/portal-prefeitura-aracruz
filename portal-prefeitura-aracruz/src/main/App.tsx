@@ -6,6 +6,7 @@ import { Header } from "../components/header/header.component";
 import NavBar from "../components/nav";
 import SideMenuDrawer from "../components/sideMenuDrawer";
 import { PageContainer } from "../components/pageContainer";
+import "react-multi-carousel/lib/styles.css";
 
 function App() {
   const [isShowingNavMenu, setIsShowingNavMenu] =

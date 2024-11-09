@@ -6,6 +6,7 @@ export const PageContainer = styled.main`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-height: 100vh;
 
   @media (max-width: 960px) {
     width: calc(100vw - 80px);
