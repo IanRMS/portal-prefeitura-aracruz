@@ -1,18 +1,20 @@
 import React from "react";
 import {
-  MoreAccessedService,
-  MoreAccessedServiceDescription,
-  MoreAccessedServicesContainer,
-  MoreAccessedServiceTitle,
   Section,
   SectionTitle,
   ShowMoreButton,
   ShowMoreButtonContainer,
-} from "../homePage.styles";
+} from "../../homePage.styles";
 import { useNavigate } from "react-router";
-import { accessedServices } from "../../../mocked/moreAccessedServices";
+import { accessedServices } from "../../../../mocked/moreAccessedServices";
+import {
+  MoreAccessedService,
+  MoreAccessedServiceDescription,
+  MoreAccessedServicesContainer,
+  MoreAccessedServiceTitle,
+} from "./moreAccessedServices.styles";
 
-const MoreAccessedServicesSection = () => {
+export const MoreAccessedServicesSection = () => {
   const navigate = useNavigate();
 
   return (
@@ -41,5 +43,3 @@ const MoreAccessedServicesSection = () => {
     </Section>
   );
 };
-
-export default MoreAccessedServicesSection;

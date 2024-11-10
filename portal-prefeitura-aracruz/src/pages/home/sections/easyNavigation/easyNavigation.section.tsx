@@ -1,14 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router";
-import {
-  EasyNavigationCard,
-  EasyNavigationContainer,
-  Section,
-  SectionTitle,
-} from "../homePage.styles";
-import { easyNavigationItems } from "../../../mocked/easyNavigationItems";
+import { Section, SectionTitle } from "../../homePage.styles";
+import { easyNavigationItems } from "../../../../mocked/easyNavigationItems";
+import { EasyNavigationCard, EasyNavigationContainer } from "./easyNavigation.styles";
 
-const EasyNavigationSection = () => {
+export const EasyNavigationSection = () => {
   const navigate = useNavigate();
 
   return (
@@ -28,5 +24,3 @@ const EasyNavigationSection = () => {
     </Section>
   );
 };
-
-export default EasyNavigationSection;

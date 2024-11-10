@@ -1,20 +1,22 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import {
+  Section,
+  SectionTitle,
+  ShowMoreButton,
+  ShowMoreButtonContainer,
+} from "../../homePage.styles";
+import { news } from "../../../../mocked/news";
+import {
   New,
   NewDescription,
   NewImage,
   NewsContainer,
   NewTheme,
   NewTitle,
-  Section,
-  SectionTitle,
-  ShowMoreButton,
-  ShowMoreButtonContainer,
-} from "../homePage.styles";
-import { news } from "../../../mocked/news";
+} from "./news.styles";
 
-const NewsSection = () => {
+export const NewsSection = () => {
   const navigate = useNavigate();
 
   return (
@@ -38,5 +40,3 @@ const NewsSection = () => {
     </Section>
   );
 };
-
-export default NewsSection;

@@ -1,9 +1,8 @@
 import React from "react";
-
-import EasyNavigationSection from "./sections/easyNavigation.section";
-import MoreAccessedServicesSection from "./sections/moreAccessedServices.section";
-import NewsSection from "./sections/news.section";
-import CarouselSection from "./sections/carousel.section";
+import CarouselSection from "./sections/carousel";
+import EasyNavigationSection from "./sections/easyNavigation";
+import MoreAccessedServicesSection from "./sections/moreAccessedServices";
+import NewsSection from "./sections/news";
 
 export function HomePage() {
   return (

@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
+import { Section } from "../../homePage.styles";
+import { homeSlides } from "../../../../mocked/homeSlides";
+import ArrowRight from "../../../../assets/icons/right.svg";
+import ArrowLeft from "../../../../assets/icons/left.svg";
 import {
   ArrowButton,
   CarouselImage,
   CarouselWrapper,
-  Dot,
   DotsContainer,
-  Section,
-} from "../homePage.styles";
-import { homeSlides } from "../../../mocked/homeSlides";
-import ArrowRight from "../../../assets/icons/right.svg";
-import ArrowLeft from "../../../assets/icons/left.svg";
+  Dot,
+} from "./carousel.styles";
 
-const CarouselSection = () => {
+export const CarouselSection = () => {
   const [currentSlide, setCurrentSlide] = React.useState<number>(0);
 
   const handleSlide = (operation: "next" | "prev") => {
@@ -59,5 +59,3 @@ const CarouselSection = () => {
     </Section>
   );
 };
-
-export default CarouselSection;
