@@ -11,14 +11,14 @@ import {
   SideMenuButton,
   SiteInfo,
 } from "./header.styles";
-import SiteMap from "../../assets/icons/site-map.svg";
-import Instagram from "../../assets/icons/instagram.svg";
-import Facebook from "../../assets/icons/facebook.svg";
-import Youtube from "../../assets/icons/youtube.svg";
-import Search from "../../assets/icons/search.svg";
-import Accessibility from "../../assets/icons/accessibility.svg";
-import LogoPref from "../../assets/images/logo-prefeitura.svg";
-import Menu from "../../assets/icons/menu.svg";
+import SiteMap from "assets/icons/site-map.svg";
+import Instagram from "assets/icons/instagram.svg";
+import Facebook from "assets/icons/facebook.svg";
+import Youtube from "assets/icons/youtube.svg";
+import Search from "assets/icons/search.svg";
+import Accessibility from "assets/icons/accessibility.svg";
+import LogoPref from "assets/images/logo-prefeitura.svg";
+import Menu from "assets/icons/menu.svg";
 
 interface HeaderProps {
   showNavMenu: () => void;
@@ -26,7 +26,6 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ showNavMenu }) => {
   const handleShowMenu = () => {
-    console.log("MOSTRA ESSA BUCETA");
     showNavMenu();
   };
 

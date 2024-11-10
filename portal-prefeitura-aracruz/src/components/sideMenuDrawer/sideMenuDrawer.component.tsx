@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
-import Close from "../../assets/icons/close.svg";
-import ArrowDown from "../../assets/icons/arrow-down.svg";
+import Close from "assets/icons/close.svg";
+import ArrowDown from "assets/icons/arrow-down.svg";
 import {
   BackDrop,
   CloseButton,

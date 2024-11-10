@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 
-import { navItems } from "../../utils/nav-items";
+import { navItems } from "utils/nav-items";
 import {
   Nav,
   NavList,
@@ -9,7 +9,7 @@ import {
   NavListSubMenu,
   SubMenuItem,
 } from "./nav.styles";
-import ArrowDown from "../../assets/icons/arrow-down.svg";
+import ArrowDown from "assets/icons/arrow-down.svg";
 
 function useOutSiteClickAlert(ref: any, action: any) {
   useEffect(() => {

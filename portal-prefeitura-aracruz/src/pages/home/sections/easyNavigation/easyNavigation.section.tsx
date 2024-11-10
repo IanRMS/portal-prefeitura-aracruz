@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import { Section, SectionTitle } from "../../homePage.styles";
-import { easyNavigationItems } from "../../../../mocked/easyNavigationItems";
+import { easyNavigationItems } from "mocked/easyNavigationItems";
 import { EasyNavigationCard, EasyNavigationContainer } from "./easyNavigation.styles";
 
 export const EasyNavigationSection = () => {

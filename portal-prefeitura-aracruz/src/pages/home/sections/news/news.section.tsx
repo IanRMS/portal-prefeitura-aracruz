@@ -6,7 +6,7 @@ import {
   ShowMoreButton,
   ShowMoreButtonContainer,
 } from "../../homePage.styles";
-import { news } from "../../../../mocked/news";
+import { news } from "mocked/news";
 import {
   New,
   NewDescription,

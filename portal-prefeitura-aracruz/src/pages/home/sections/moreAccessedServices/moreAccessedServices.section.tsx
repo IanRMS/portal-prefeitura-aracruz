@@ -1,12 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router";
+
 import {
   Section,
   SectionTitle,
   ShowMoreButton,
   ShowMoreButtonContainer,
 } from "../../homePage.styles";
-import { useNavigate } from "react-router";
-import { accessedServices } from "../../../../mocked/moreAccessedServices";
+import { accessedServices } from "mocked/moreAccessedServices";
 import {
   MoreAccessedService,
   MoreAccessedServiceDescription,

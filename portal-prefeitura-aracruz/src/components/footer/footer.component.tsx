@@ -8,10 +8,10 @@ import {
   InfoRow,
   InfoTitle,
 } from "./footer.styles";
-import PhoneIcon from "../../assets/icons/phone.svg";
-import EmailIcon from "../../assets/icons/email.svg";
-import ArrowRight from "../../assets/icons/arrow-right.svg";
-import LogoPrefeiura from "../../assets/images/logo-prefeitura.svg";
+import PhoneIcon from "assets/icons/phone.svg";
+import EmailIcon from "assets/icons/email.svg";
+import ArrowRight from "assets/icons/arrow-right.svg";
+import LogoPrefeiura from "assets/images/logo-prefeitura.svg";
 
 export function Footer() {
   return (

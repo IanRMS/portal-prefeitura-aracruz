@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Section } from "../../homePage.styles";
-import { homeSlides } from "../../../../mocked/homeSlides";
-import ArrowRight from "../../../../assets/icons/right.svg";
-import ArrowLeft from "../../../../assets/icons/left.svg";
+import { homeSlides } from "mocked/homeSlides";
+import ArrowRight from "assets/icons/right.svg";
+import ArrowLeft from "assets/icons/left.svg";
 import {
   ArrowButton,
   CarouselImage,
