@@ -8,7 +8,7 @@ export const navItems = [
     items: [
       {
         label: "HISTÓRIA",
-        route: "/historia",
+        route: "/historia-municipio",
       },
       {
         label: "SÍMBOLOS OFICIAIS",

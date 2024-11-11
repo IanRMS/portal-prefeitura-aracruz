@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router";
 import Home from "../pages/home/index";
-import History from "../pages/history/index";
+import History from "../pages/cityHistory/index";
 import News from "pages/news";
 import NewDetails from "pages/newDetails";
 import Services from "pages/services";
