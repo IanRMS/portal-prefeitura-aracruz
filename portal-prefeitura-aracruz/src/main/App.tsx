@@ -7,6 +7,7 @@ import NavBar from "../components/nav";
 import SideMenuDrawer from "../components/sideMenuDrawer";
 import { PageContainer } from "../components/pageContainer";
 import "pure-react-carousel/dist/react-carousel.es.css";
+import FabButtonComponent from "components/fab";
 
 function App() {
   const [isShowingNavMenu, setIsShowingNavMenu] =
@@ -26,6 +27,7 @@ function App() {
         )}
         <PageContainer>
           <AppRoutes />
+          <FabButtonComponent />
         </PageContainer>
       </BrowserRouter>
       <Footer />

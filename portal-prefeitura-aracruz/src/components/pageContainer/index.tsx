@@ -7,6 +7,7 @@ export const PageContainer = styled.main`
   flex-direction: column;
   gap: 64px;
   min-height: 100vh;
+  position: relative;
 
   @media (max-width: 960px) {
     width: calc(100vw - 80px);
