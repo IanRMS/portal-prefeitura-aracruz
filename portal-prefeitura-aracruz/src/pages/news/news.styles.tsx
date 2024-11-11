@@ -1,23 +1,5 @@
 import styled from "styled-components";
 
-export const BreadCrumsContainer = styled.div`
-  width: 100%;
-  padding-top: 4px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--gray-light);
-`;
-
-export const PageTitle = styled.h1`
-  font-weight: 300;
-  color: var(--default);
-  width: 100%;
-  border-bottom: 1px solid var(--gray-light);
-  text-align: center;
-  text-transform: uppercase;
-  padding-bottom: 24px;
-  margin-top: -36px;
-`;
-
 export const SearchButton = styled.button`
   background-color: var(--primary);
   display: flex;

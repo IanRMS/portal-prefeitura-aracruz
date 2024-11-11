@@ -1,10 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import {
-  BreadCrumsContainer,
-  PageTitle,
-  SearchButton,
-} from "./news.styles";
+import { SearchButton } from "./news.styles";
 import {
   Breadcrumbs,
   FormControl,
@@ -19,11 +15,17 @@ import {
 import { newsCategories } from "mocked/newCategories";
 import { ReactComponent as SearchIcon } from "assets/icons/search-white.svg";
 import PaginatedItems from "./pagination.component";
+import { BreadCrumsContainer } from "components/breadCrumb";
+import { PageTitle } from "components/pageTitle";
 
 export function NewsPage() {
   const navigate = useNavigate();
   const [searchTitle, setSearchTitle] = useState<string>("");
   const [searchCategory, setSearchCategory] = useState<string>("0");
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   const handleClick = (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
