@@ -3,15 +3,15 @@ import { useNavigate } from "react-router";
 
 import { ShowMoreButton, ShowMoreButtonContainer } from "../../homePage.styles";
 import { accessedServices } from "mocked/moreAccessedServices";
+import { MoreAccessedServicesContainer } from "./moreAccessedServices.styles";
+import { Section, SectionTitle } from "components/section";
 import {
   MoreAccessedService,
   MoreAccessedServiceDescription,
-  MoreAccessedServicesContainer,
   MoreAccessedServiceTitle,
-} from "./moreAccessedServices.styles";
-import { Section, SectionTitle } from "components/section";
+} from "components/servicesContainer";
 
-export const MoreAccessedServicesSection = () => {
+export function MoreAccessedServicesSection() {
   const navigate = useNavigate();
 
   return (
@@ -33,10 +33,11 @@ export const MoreAccessedServicesSection = () => {
         ))}
       </MoreAccessedServicesContainer>
       <ShowMoreButtonContainer>
-        <ShowMoreButton onClick={() => navigate("/services")}>
+        <ShowMoreButton onClick={() => navigate("/servicos")}>
           Todos os serviços
         </ShowMoreButton>
       </ShowMoreButtonContainer>
     </Section>
   );
-};
+}
+

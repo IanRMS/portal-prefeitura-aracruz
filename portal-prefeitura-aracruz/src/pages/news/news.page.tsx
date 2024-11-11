@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import { SearchButton } from "./news.styles";
 import {
   Breadcrumbs,
   FormControl,
@@ -17,6 +16,7 @@ import { ReactComponent as SearchIcon } from "assets/icons/search-white.svg";
 import PaginatedItems from "./pagination.component";
 import { BreadCrumsContainer } from "components/breadCrumb";
 import { PageTitle } from "components/pageTitle";
+import { SearchButton } from "components/searchButton";
 
 export function NewsPage() {
   const navigate = useNavigate();

@@ -11,6 +11,10 @@ button {
   cursor: pointer;
 }
 
+.MuiOutlinedInput-root {
+  border-radius: 8px !important;
+}
+
 :root {
   --primary: #2E3192;
   --primary-light: #4145C5;
