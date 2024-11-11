@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Section } from "../../homePage.styles";
 import { homeSlides } from "mocked/homeSlides";
 import ArrowRight from "assets/icons/right.svg";
 import ArrowLeft from "assets/icons/left.svg";
@@ -10,6 +9,7 @@ import {
   DotsContainer,
   Dot,
 } from "./carousel.styles";
+import { Section } from "components/section";
 
 export const CarouselSection = () => {
   const [currentSlide, setCurrentSlide] = React.useState<number>(0);

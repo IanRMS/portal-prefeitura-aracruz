@@ -1,20 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router";
-import {
-  Section,
-  SectionTitle,
-  ShowMoreButton,
-  ShowMoreButtonContainer,
-} from "../../homePage.styles";
+import { ShowMoreButton, ShowMoreButtonContainer } from "../../homePage.styles";
 import { news } from "mocked/news";
-import {
-  New,
-  NewDescription,
-  NewImage,
-  NewsContainer,
-  NewTheme,
-  NewTitle,
-} from "./news.styles";
+import { Section, SectionTitle } from "components/section";
+import { NewsContainer } from "./news.styles";
+import { New, NewDescription, NewImage, NewTheme, NewTitle } from "components/new";
 
 export const NewsSection = () => {
   const navigate = useNavigate();
@@ -23,7 +13,7 @@ export const NewsSection = () => {
     <Section>
       <SectionTitle>Notícias</SectionTitle>
       <NewsContainer>
-        {news.map((item) => (
+        {news.slice(0, 4).map((item) => (
           <New key={item.id}>
             <NewImage src={item.image} alt={item.title} />
             <NewTheme>{item.theme}</NewTheme>

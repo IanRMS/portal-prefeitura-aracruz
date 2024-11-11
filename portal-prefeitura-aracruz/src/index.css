@@ -7,6 +7,10 @@ body {
   overflow-x: hidden;
 }
 
+button {
+  cursor: pointer;
+}
+
 :root {
   --primary: #2E3192;
   --primary-light: #4145C5;

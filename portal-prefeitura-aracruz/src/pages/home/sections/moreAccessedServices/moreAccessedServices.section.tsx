@@ -1,12 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 
-import {
-  Section,
-  SectionTitle,
-  ShowMoreButton,
-  ShowMoreButtonContainer,
-} from "../../homePage.styles";
+import { ShowMoreButton, ShowMoreButtonContainer } from "../../homePage.styles";
 import { accessedServices } from "mocked/moreAccessedServices";
 import {
   MoreAccessedService,
@@ -14,6 +9,7 @@ import {
   MoreAccessedServicesContainer,
   MoreAccessedServiceTitle,
 } from "./moreAccessedServices.styles";
+import { Section, SectionTitle } from "components/section";
 
 export const MoreAccessedServicesSection = () => {
   const navigate = useNavigate();
