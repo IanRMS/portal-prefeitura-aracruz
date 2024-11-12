@@ -4,7 +4,8 @@ import Home from "../pages/home/index";
 import History from "../pages/cityHistory/index";
 import News from "pages/news";
 import NewDetails from "pages/newDetails";
-import Services from "pages/services";
+import Services from "pages/servicesPage";
+import Mayor from "pages/mayor";
 
 export default function AppRoutes() {
   return (
@@ -14,6 +15,7 @@ export default function AppRoutes() {
       <Route path="/noticias/:id" element={<NewDetails />} />
       <Route path="/servicos" element={<Services />} />
       <Route path="/historia-municipio" element={<History />} />
+      <Route path="/prefeito" element={<Mayor/>} />
     </Routes>
   );
 }

@@ -1,0 +1,11 @@
+import Photo from "assets/images/mayor-photo.jpg";
+
+export const cityMayorData = {
+  img: Photo,
+  address: "Praça 03 de Outubro, 01 – Centro- Marajó",
+  phone: "(91) 9192-4572",
+  email: "prefeito@cidade.com.br",
+  attendingTime: "Segunda à Sexta-Feira das 08:00h às 14:00h",
+  description:
+    "João Augusto Silva nasceu e cresceu em uma pequena cidade do interior, sempre cercado pela simplicidade da vida rural e pelo forte senso de comunidade. Desde jovem, demonstrou interesse por assuntos públicos e pelo bem-estar de sua cidade, participando ativamente de projetos sociais e organizando eventos comunitários. Formou-se em Administração Pública pela Universidade Estadual, com especialização em Planejamento Urbano, o que lhe deu uma base sólida para entender as necessidades de cidades em desenvolvimento. <br/> <br/> Ao longo de sua carreira, João Augusto ocupou cargos de destaque na administração pública local, sendo reconhecido por sua habilidade de conciliar interesses diversos e promover o diálogo entre diferentes setores da sociedade. Antes de assumir o cargo de prefeito, ele foi secretário municipal de desenvolvimento econômico, onde conseguiu atrair novos investimentos para a cidade e reduzir o desemprego. Seu trabalho à frente da secretaria foi um divisor de águas, sendo o responsável por revitalizar áreas industriais e aumentar a geração de emprego e renda. <br/><br/> Como prefeito, João tem focado em três pilares principais: educação, saúde e infraestrutura. Sob sua liderança, o município investiu na construção de novas escolas e hospitais, além da modernização das vias públicas e dos sistemas de transporte. Ele também lançou programas inovadores de sustentabilidade, com o objetivo de tornar a cidade um exemplo em gestão ambiental. A transparência e a participação popular são marcas de sua gestão, com audiências públicas frequentes e iniciativas para ouvir as demandas da população.<br/><br/>João Augusto é casado com Mariana Costa, com quem tem dois filhos. Além de seu comprometimento com a administração pública, ele é um defensor de práticas esportivas e atividades culturais, sendo um frequentador assíduo dos eventos comunitários. Em seu tempo livre, gosta de praticar ciclismo e está sempre envolvido em ações sociais voltadas para a melhoria da qualidade de vida dos moradores da cidade.",
+};
