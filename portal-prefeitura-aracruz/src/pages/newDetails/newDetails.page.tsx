@@ -1,4 +1,4 @@
-import { Breadcrumbs, Link, Typography } from "@material-ui/core";
+import { Breadcrumbs, Grid, Link, Typography } from "@material-ui/core";
 import { BreadCrumsContainer } from "components/breadCrumb";
 import { PageTitle } from "components/pageTitle";
 import { news } from "mocked/news";
@@ -10,6 +10,7 @@ import {
   NewDetailsText,
   NewDetailsTitle,
 } from "./newDetails.styles";
+import { Wrapper } from "components/wrapper";
 
 export function NewDetailsPage() {
   const [newDetails, setNewDetails] = useState<any>({});
@@ -38,7 +39,7 @@ export function NewDetailsPage() {
         </Breadcrumbs>
       </BreadCrumsContainer>
       <PageTitle>NOTÍCIAS</PageTitle>
-      <div>
+      <Wrapper style={{ marginTop: 64 }}>
         <NewDetailsTitle>{newDetails.title}</NewDetailsTitle>
         <NewDetailsText>{newDetails.description}</NewDetailsText>
         <NewDetailsInfo>
@@ -53,7 +54,7 @@ export function NewDetailsPage() {
             }}
           ></span>
         </NewDetailsText>
-      </div>
+      </Wrapper>
     </>
   );
 }

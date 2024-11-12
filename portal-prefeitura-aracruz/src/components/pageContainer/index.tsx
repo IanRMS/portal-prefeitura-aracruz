@@ -5,7 +5,6 @@ export const PageContainer = styled.main`
   padding: 12px 160px 72px 160px;
   display: flex;
   flex-direction: column;
-  gap: 64px;
   min-height: 100vh;
   position: relative;
 

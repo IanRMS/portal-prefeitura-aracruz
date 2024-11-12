@@ -18,22 +18,26 @@ function PaginatedItems({ itemsPerPage = 0 }) {
   };
 
   return (
-    <>
-      {<NewsGrid currentItems={currentItems} />}
-      <Grid container spacing={3} justifyContent="center">
-        <PaginationContainer>
-          <ReactPaginate
-            breakLabel="..."
-            nextLabel=">"
-            onPageChange={handlePageClick}
-            pageRangeDisplayed={2}
-            pageCount={pageCount}
-            previousLabel="<"
-            renderOnZeroPageCount={null}
-          />
-        </PaginationContainer>
+    <Grid container spacing={7}>
+      <Grid item xs={12}>
+        <NewsGrid currentItems={currentItems} />
       </Grid>
-    </>
+      <Grid item xs={12}>
+        <Grid container spacing={3} justifyContent="center">
+          <PaginationContainer>
+            <ReactPaginate
+              breakLabel="..."
+              nextLabel=">"
+              onPageChange={handlePageClick}
+              pageRangeDisplayed={2}
+              pageCount={pageCount}
+              previousLabel="<"
+              renderOnZeroPageCount={null}
+            />
+          </PaginationContainer>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 }
 

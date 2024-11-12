@@ -6,6 +6,7 @@ export const CityImage = styled.img`
   max-height: 545px;
   border-radius: 16px;
   object-fit: cover;
+  margin-top: 32px;
 `;
 
 export const Title = styled.h3`

@@ -6,6 +6,7 @@ import Photo from "assets/images/mayor-photo.jpg";
 import { InfoText, InfoTitle, MayorPhoto } from "./mayor.styles";
 import { SectionTitle } from "components/section";
 import { cityMayorData } from "mocked/cityMayorData";
+import { Wrapper } from "components/wrapper";
 
 export const MayorPage = () => {
   const [mayorData, setMayorData] = useState<any>({});
@@ -26,7 +27,7 @@ export const MayorPage = () => {
         </Breadcrumbs>
       </BreadCrumsContainer>
       <PageTitle>PREFEITO</PageTitle>
-      <>
+      <Wrapper>
         <Grid container spacing={3} alignItems="flex-start">
           <Grid item xs={12} md={3}>
             <Grid container spacing={3}>
@@ -68,7 +69,7 @@ export const MayorPage = () => {
             </Grid>
           </Grid>
         </Grid>
-      </>
+      </Wrapper>
     </>
   );
 };

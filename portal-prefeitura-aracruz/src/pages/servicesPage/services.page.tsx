@@ -16,6 +16,7 @@ import {
 } from "components/servicesContainer";
 import { accessedServices } from "mocked/moreAccessedServices";
 import { PageTitle } from "components/pageTitle";
+import { Wrapper } from "components/wrapper";
 
 export const ServicesPage = () => {
   const [servicesList, setServicesList] = useState<any>([]);
@@ -43,41 +44,49 @@ export const ServicesPage = () => {
         </Breadcrumbs>
       </BreadCrumsContainer>
       <PageTitle>SERVIÇOS</PageTitle>
-      <Grid container spacing={3}>
-        <Grid item xs>
-          <TextField
-            variant="outlined"
-            name="searchTerm"
-            label="Título ou descrição"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            fullWidth
-          />
-        </Grid>
-        <Grid item xs="auto">
-          <SearchButton onClick={() => onSearch()}>
-            <SearchIcon />
-            Consultar
-          </SearchButton>
-        </Grid>
-      </Grid>
-      <Grid container spacing={2}>
-        {servicesList?.map((service: any) => (
-          <Grid item xs={12} md={6} lg={3}>
-            <MoreAccessedService key={service.title}>
-              <img src={service.icon} alt="" />
-              <div>
-                <MoreAccessedServiceTitle>
-                  {service.title}
-                </MoreAccessedServiceTitle>
-                <MoreAccessedServiceDescription>
-                  {service.description}
-                </MoreAccessedServiceDescription>
-              </div>
-            </MoreAccessedService>
+      <Wrapper>
+        <Grid container spacing={6}>
+          <Grid item xs={12}>
+            <Grid container spacing={3}>
+              <Grid item xs>
+                <TextField
+                  variant="outlined"
+                  name="searchTerm"
+                  label="Título ou descrição"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  fullWidth
+                />
+              </Grid>
+              <Grid item xs="auto">
+                <SearchButton onClick={() => onSearch()}>
+                  <SearchIcon />
+                  Consultar
+                </SearchButton>
+              </Grid>
+            </Grid>
           </Grid>
-        ))}
-      </Grid>
+          <Grid item xs={12}>
+            <Grid container spacing={2}>
+              {servicesList?.map((service: any) => (
+                <Grid item xs={12} md={6} lg={3}>
+                  <MoreAccessedService key={service.title}>
+                    <img src={service.icon} alt="" />
+                    <div>
+                      <MoreAccessedServiceTitle>
+                        {service.title}
+                      </MoreAccessedServiceTitle>
+                      <MoreAccessedServiceDescription>
+                        {service.description}
+                      </MoreAccessedServiceDescription>
+                    </div>
+                  </MoreAccessedService>
+                </Grid>
+              ))}
+            </Grid>
+          </Grid>
+        </Grid>
+      </Wrapper>
     </>
   );
 };

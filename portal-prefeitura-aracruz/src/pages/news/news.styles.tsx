@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const PaginationContainer = styled.div`
   display: flex;
   flex: 1;
+  margin-top: 16px;
 
   > ul {
     width: 100%;
@@ -14,7 +15,7 @@ export const PaginationContainer = styled.div`
 
     > li > a {
       background: var(--primary);
-      padding: 12px;
+      padding: 12px 16px;
       border-radius: 4px;
       color: var(--lightest);
       user-select: none;

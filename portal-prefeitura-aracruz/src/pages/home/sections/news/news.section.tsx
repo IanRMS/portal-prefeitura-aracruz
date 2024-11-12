@@ -10,7 +10,7 @@ export const NewsSection = () => {
   const navigate = useNavigate();
 
   return (
-    <Section>
+    <Section style={{ marginTop: 64 }}>
       <SectionTitle>Notícias</SectionTitle>
       <NewsContainer>
         {news.slice(0, 4).map((item) => (

@@ -1,14 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import { easyNavigationItems } from "mocked/easyNavigationItems";
-import { EasyNavigationCard, EasyNavigationContainer } from "./easyNavigation.styles";
+import {
+  EasyNavigationCard,
+  EasyNavigationContainer,
+} from "./easyNavigation.styles";
 import { Section, SectionTitle } from "components/section";
 
 export const EasyNavigationSection = () => {
   const navigate = useNavigate();
 
   return (
-    <Section>
+    <Section style={{ marginTop: 64 }}>
       <SectionTitle>Acesso rápido</SectionTitle>
       <EasyNavigationContainer>
         {easyNavigationItems.map((item) => (

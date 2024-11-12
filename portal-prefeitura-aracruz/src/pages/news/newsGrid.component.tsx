@@ -13,7 +13,7 @@ import {
 export const NewsGrid = (currentItems: any) => {
   const navigate = useNavigate();
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={4}>
       {currentItems.currentItems.map((item: any) => (
         <Grid item xs={12} md={6} lg={3} key={item.id}>
           <New onClick={() => navigate(`/noticias/${item.id}`)}>

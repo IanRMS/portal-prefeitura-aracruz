@@ -14,6 +14,7 @@ export const NewDetailsText = styled.p`
   line-height: 32px;
   color: var(--neutral);
   text-align: justify;
+  margin-top: 56px;
 `;
 
 export const NewDetailsInfo = styled.p`

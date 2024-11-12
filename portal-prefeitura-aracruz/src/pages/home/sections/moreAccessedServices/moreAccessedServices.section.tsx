@@ -15,7 +15,7 @@ export function MoreAccessedServicesSection() {
   const navigate = useNavigate();
 
   return (
-    <Section>
+    <Section style={{ marginTop: 64 }}>
       <SectionTitle>Serviços mais acessados</SectionTitle>
       <MoreAccessedServicesContainer>
         {accessedServices.map((service) => (
@@ -40,4 +40,3 @@ export function MoreAccessedServicesSection() {
     </Section>
   );
 }
-

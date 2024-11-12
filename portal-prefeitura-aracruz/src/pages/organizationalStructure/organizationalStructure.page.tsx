@@ -4,6 +4,7 @@ import { BreadCrumsContainer } from "components/breadCrumb";
 import { PageTitle } from "components/pageTitle";
 import { sctructureItems } from "mocked/structureItems";
 import { OrganizationalLink, Text } from "./organizationalStructure.styles";
+import { Wrapper } from "components/wrapper";
 
 export const OrganizationalStructurePage = () => {
   return (
@@ -17,22 +18,24 @@ export const OrganizationalStructurePage = () => {
         </Breadcrumbs>
       </BreadCrumsContainer>
       <PageTitle>ESTRUTURA ORGANIZACIONAL</PageTitle>
-      <Grid container spacing={3}>
-        {sctructureItems.map((item) => (
-          <Grid key={item.id} item xs={12} md={6}>
-            <OrganizationalLink href={`/estrutura-organizacional/${item.id}`}>
-              <Grid container spacing={2} alignItems="center">
-                <Grid item xs="auto">
-                  <img src={item.icon} alt="" />
+      <Wrapper>
+        <Grid container spacing={3}>
+          {sctructureItems.map((item) => (
+            <Grid key={item.id} item xs={12} md={6}>
+              <OrganizationalLink href={`/estrutura-organizacional/${item.id}`}>
+                <Grid container spacing={2} alignItems="center">
+                  <Grid item xs="auto">
+                    <img src={item.icon} alt="" />
+                  </Grid>
+                  <Grid item xs>
+                    <Text>{item.name}</Text>
+                  </Grid>
                 </Grid>
-                <Grid item xs>
-                  <Text>{item.name}</Text>
-                </Grid>
-              </Grid>
-            </OrganizationalLink>
-          </Grid>
-        ))}
-      </Grid>
+              </OrganizationalLink>
+            </Grid>
+          ))}
+        </Grid>
+      </Wrapper>
     </>
   );
 };
