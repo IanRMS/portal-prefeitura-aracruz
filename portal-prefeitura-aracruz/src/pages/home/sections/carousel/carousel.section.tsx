@@ -38,7 +38,7 @@ export const CarouselSection = () => {
       <CarouselWrapper>
         {homeSlides.map(
           (slide, i) =>
-            currentSlide === i && <CarouselImage src={slide.src} alt="" />
+            currentSlide === i && <CarouselImage key={i} src={slide.src} alt="" />
         )}
         {currentSlide > 0 && (
           <ArrowButton className="left" onClick={() => handleSlide("prev")}>
@@ -53,7 +53,7 @@ export const CarouselSection = () => {
       </CarouselWrapper>
       <DotsContainer>
         {homeSlides.map((_item, i) => (
-          <Dot active={i === currentSlide} />
+          <Dot key={i} active={i === currentSlide} />
         ))}
       </DotsContainer>
     </Section>

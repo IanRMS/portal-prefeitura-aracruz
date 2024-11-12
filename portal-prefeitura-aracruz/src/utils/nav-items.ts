@@ -37,7 +37,7 @@ export const navItems = [
       },
       {
         label: "ESTRUTURA ORGANIZACIONAL",
-        route: "/estrutura",
+        route: "/estrutura-organizacional",
       },
     ],
   },
