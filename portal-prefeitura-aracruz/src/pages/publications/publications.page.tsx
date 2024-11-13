@@ -14,6 +14,7 @@ import { Wrapper } from "components/wrapper";
 import { publicationsTabs } from "mocked/publicationsTabs";
 import { TabsContainer } from "./publications.styles";
 import { ContentComponent } from "./components/content.component";
+import { diaryPublications } from "mocked/diaryPublications";
 
 const a11yProps = (index: number) => {
   return {
@@ -64,11 +65,12 @@ export const PublicationsPage = () => {
             </TabsContainer>
           </Grid>
           <Grid item xs={12}>
-            {publicationsTabs.map((item, i) => (
-              <TabPanel key={i} value={activeTab} index={i}>
-                <ContentComponent title={item.name} />
-              </TabPanel>
-            ))}
+            <TabPanel key={0} value={activeTab} index={0}>
+              <ContentComponent
+                title={"Diário oficial próprio"}
+                publications={diaryPublications}
+              />
+            </TabPanel>
           </Grid>
         </Grid>
       </Wrapper>
