@@ -27,17 +27,15 @@ export const ExportText = styled.strong`
   line-height: 15.4px;
 `;
 
-export const PaginationButton = styled.button`
-  width: 42px;
-  height: 40px;
-  user-select: none;
-  > span {
-    margin: auto;
-    font-weight: 700;
-    font-size: 16px;
+export const CustomTableHead = styled.thead`
+  display: table-header-group;
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  > tr > td {
+    background-color: var(--gray-light);
+    color: var(--neutral);
+    font-weight: 500;
+    font-size: 14px;
   }
-  background: var(--gray-lightest);
-  color: var(--primary);
-  border: 1px solid var(--primary);
-  border-radius: 4px;
 `;

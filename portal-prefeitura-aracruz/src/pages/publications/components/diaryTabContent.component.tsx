@@ -8,7 +8,6 @@ import {
   TableBody,
   TableCell,
   TableContainer,
-  TableHead,
   TableRow,
   TextField,
 } from "@material-ui/core";
@@ -18,24 +17,11 @@ import { SearchButton } from "components/searchButton";
 import { ReactComponent as SearchIcon } from "assets/icons/search-white.svg";
 import Calendar from "assets/icons/calendar.svg";
 import { ReactComponent as Document } from "assets/icons/services-icons/document.svg";
-import { ExportText, PaginationButton, TabTitle } from "../publications.styles";
-import ArrowRight from "assets/icons/arrow-right-blue.svg";
-import ArrowLeft from "assets/icons/arrow-left-blue.svg";
+import { CustomTableHead, ExportText, TabTitle } from "../publications.styles";
+import { diaryPublications } from "mocked/diaryPublications";
+import { CustomTablePagination } from "components/tablePagination";
 
-interface publicationPage {
-  page: number;
-  items: any;
-}
-
-interface IContentComponent {
-  title: string;
-  publications: publicationPage[];
-}
-
-export const ContentComponent: FC<IContentComponent> = ({
-  title,
-  publications,
-}) => {
+export const DiaryTabContent = () => {
   const [page, setPage] = useState<number>(0);
   const [listItems, setListItems] = useState<any>(null as any);
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -43,18 +29,19 @@ export const ContentComponent: FC<IContentComponent> = ({
   const [endDate, setEndDate] = useState<string>("");
 
   useEffect(() => {
-    console.log(publications);
     setPage(1);
   }, []);
 
   useEffect(() => {
-    setListItems(publications.filter((item: any) => item.page === page)[0]);
+    setListItems(
+      diaryPublications.filter((item: any) => item.page === page)[0]
+    );
   }, [page]);
 
   return (
     <>
       <Grid item xs={12}>
-        <TabTitle>{title}</TabTitle>
+        <TabTitle>Diário oficial próprio</TabTitle>
       </Grid>
       <Grid item xs={12}>
         <Grid container spacing={3}>
@@ -150,7 +137,7 @@ export const ContentComponent: FC<IContentComponent> = ({
         <Grid item xs={12}>
           <TableContainer>
             <Table>
-              <TableHead>
+              <CustomTableHead>
                 <TableRow>
                   <TableCell width="12%">Data Publicação</TableCell>
                   <TableCell width="12%">Número Edição</TableCell>
@@ -158,7 +145,7 @@ export const ContentComponent: FC<IContentComponent> = ({
                   <TableCell width="60%">Ementa</TableCell>
                   <TableCell width="auto">Ver arquivo</TableCell>
                 </TableRow>
-              </TableHead>
+              </CustomTableHead>
               <TableBody>
                 {listItems &&
                   listItems?.items?.map((item: any) => (
@@ -166,7 +153,13 @@ export const ContentComponent: FC<IContentComponent> = ({
                       <TableCell>{item.date}</TableCell>
                       <TableCell>{item.number}</TableCell>
                       <TableCell>{item.year}</TableCell>
-                      <TableCell>{item.ement}</TableCell>
+                      <TableCell>
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: item.ement,
+                          }}
+                        />
+                      </TableCell>
                       <TableCell>
                         <IconButton>
                           <Document />
@@ -179,48 +172,11 @@ export const ContentComponent: FC<IContentComponent> = ({
           </TableContainer>
         </Grid>
         <Grid item xs={12} style={{ marginTop: 32 }}>
-          <Grid
-            container
-            spacing={3}
-            justifyContent="center"
-            alignItems="center"
-          >
-            {page > 1 && (
-              <Grid item xs="auto">
-                <IconButton onClick={() => setPage(page - 1)}>
-                  <img src={ArrowLeft} alt="" />
-                </IconButton>
-              </Grid>
-            )}
-            {publications.map((item) => (
-              <Grid item xs="auto" key={item.page}>
-                <PaginationButton
-                  onClick={() => setPage(item.page)}
-                  style={{
-                    background: item.page === page ? "var(--primary)" : "none",
-                  }}
-                >
-                  <span
-                    style={{
-                      color:
-                        item.page === page
-                          ? "var(--lightest)"
-                          : "var(--primary)",
-                    }}
-                  >
-                    {item.page}
-                  </span>
-                </PaginationButton>
-              </Grid>
-            ))}
-            {publications[page]?.items?.length && (
-              <Grid item xs="auto">
-                <IconButton onClick={() => setPage(page + 1)}>
-                  <img src={ArrowRight} alt="" />
-                </IconButton>
-              </Grid>
-            )}
-          </Grid>
+          <CustomTablePagination
+            items={diaryPublications}
+            page={page}
+            setPage={setPage}
+          />
         </Grid>
       </div>
     </>

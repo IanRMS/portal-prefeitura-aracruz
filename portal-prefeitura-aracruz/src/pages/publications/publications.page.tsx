@@ -13,8 +13,9 @@ import TabPanel from "components/tabPanel";
 import { Wrapper } from "components/wrapper";
 import { publicationsTabs } from "mocked/publicationsTabs";
 import { TabsContainer } from "./publications.styles";
-import { ContentComponent } from "./components/content.component";
+import { DiaryTabContent } from "./components/diaryTabContent.component";
 import { diaryPublications } from "mocked/diaryPublications";
+import { CovidTabContent } from "./components/covidTabContent.component";
 
 const a11yProps = (index: number) => {
   return {
@@ -24,7 +25,7 @@ const a11yProps = (index: number) => {
 };
 
 export const PublicationsPage = () => {
-  const [activeTab, setActiveTab] = useState<number>(0);
+  const [activeTab, setActiveTab] = useState<number>(1);
 
   const handleChangeTab = (_event: ChangeEvent<{}>, value: number) => {
     setActiveTab(value);
@@ -66,10 +67,10 @@ export const PublicationsPage = () => {
           </Grid>
           <Grid item xs={12}>
             <TabPanel key={0} value={activeTab} index={0}>
-              <ContentComponent
-                title={"Diário oficial próprio"}
-                publications={diaryPublications}
-              />
+              <DiaryTabContent />
+            </TabPanel>
+            <TabPanel key={1} value={activeTab} index={1}>
+              <CovidTabContent />
             </TabPanel>
           </Grid>
         </Grid>
