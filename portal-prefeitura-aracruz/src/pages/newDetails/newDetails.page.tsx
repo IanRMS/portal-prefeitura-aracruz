@@ -1,4 +1,4 @@
-import { Breadcrumbs, Grid, Link, Typography } from "@material-ui/core";
+import { Breadcrumbs, Link, Typography } from "@material-ui/core";
 import { BreadCrumsContainer } from "components/breadCrumb";
 import { PageTitle } from "components/pageTitle";
 import { news } from "mocked/news";

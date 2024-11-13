@@ -46,7 +46,7 @@ export const navItems = [
     items: [
       {
         label: "DIÁRIO OFICIAL",
-        route: "/diario-oficial",
+        route: "/publicacoes/diario-oficial",
       },
       {
         label: "TRANSPARÊNCIA",

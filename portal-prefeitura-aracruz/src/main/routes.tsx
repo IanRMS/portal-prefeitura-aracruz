@@ -8,6 +8,7 @@ import Services from "pages/servicesPage";
 import Mayor from "pages/mayor";
 import OrganizationalStructure from "pages/organizationalStructure";
 import Departments from "pages/departments";
+import Publications from "pages/publications";
 
 export default function AppRoutes() {
   return (
@@ -23,6 +24,7 @@ export default function AppRoutes() {
         element={<OrganizationalStructure />}
       />
       <Route path="/estrutura-organizacional/:id" element={<Departments />} />
+      <Route path="/publicacoes/*" element={<Publications />} />
     </Routes>
   );
 }

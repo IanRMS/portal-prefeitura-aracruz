@@ -9,7 +9,7 @@ export const easyNavigationItems = [
   {
     label: "DIÁRIO OFICIAL",
     icon: Book,
-    route: "/portais/diario-oficial",
+    route: "/publicacoes/diario-oficial",
   },
   {
     label: "TRANSPARÊNCIA",

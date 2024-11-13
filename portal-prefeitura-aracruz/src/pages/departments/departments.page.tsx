@@ -14,9 +14,8 @@ export const DepartmentsPage = () => {
   const [departmentData, setDepartmentData] = useState<any>({});
 
   useEffect(() => {
-    console.log(sctructureItems.filter((item) => item.id === id)[0]);
     setDepartmentData(sctructureItems.filter((item) => item.id === id)[0]);
-  }, []);
+  }, [id]);
 
   return (
     <>
