@@ -16,4 +16,5 @@ export const InfoText = styled.p`
   font-weight: 300;
   font-size: 18px;
   color: var(--neutral);
+  margin: 8px 0px;
 `;

@@ -27,7 +27,7 @@ const FabButtonComponent = () => {
     window.removeEventListener("scroll", onScroll);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [window]);
+  }, []);
 
   return (
     <FabButton

@@ -7,6 +7,7 @@ import NewDetails from "pages/newDetails";
 import Services from "pages/servicesPage";
 import Mayor from "pages/mayor";
 import OrganizationalStructure from "pages/organizationalStructure";
+import Departments from "pages/departments";
 
 export default function AppRoutes() {
   return (
@@ -18,9 +19,10 @@ export default function AppRoutes() {
       <Route path="/historia-municipio" element={<History />} />
       <Route path="/prefeito" element={<Mayor />} />
       <Route
-        path="estrutura-organizacional"
+        path="/estrutura-organizacional"
         element={<OrganizationalStructure />}
       />
+      <Route path="/estrutura-organizacional/:id" element={<Departments />} />
     </Routes>
   );
 }

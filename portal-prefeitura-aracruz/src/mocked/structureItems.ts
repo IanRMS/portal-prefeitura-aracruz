@@ -4,9 +4,11 @@ import Phone from "assets/icons/services-icons/phone.svg";
 import Users from "assets/icons/services-icons/users.svg";
 import MoneyPaper from "assets/icons/services-icons/money-paper.svg";
 import Paper from "assets/icons/services-icons/paper.svg";
+import Photo from "assets/images/mayor-photo.jpg";
 
 export const sctructureItems = [
   {
+    photo: Photo,
     name: "Secretaria de Administração e Recursos Humanos",
     id: "01",
     responsible: "Heli Fábio da Costa Melo 1",
@@ -71,9 +73,10 @@ export const sctructureItems = [
     ],
   },
   {
+    photo: Photo,
     name: "Secretaria de Esporte, Lazer e Juventude",
     id: "02",
-    responsible: "Heli Fábio da Costa Melo 1",
+    responsible: "Heli Fábio da Costa Melo 2",
     attendingTime: "Segunda à Sexta-Feira das 08:00h às 14:00h",
     address: "Praça 03 de Outubro, 01 - Centro- Marajó",
     phone: "(91) 9192-4572",
@@ -135,9 +138,10 @@ export const sctructureItems = [
     ],
   },
   {
+    photo: Photo,
     name: "Secretaria de Agricultura",
     id: "03",
-    responsible: "Heli Fábio da Costa Melo 1",
+    responsible: "Heli Fábio da Costa Melo 3",
     attendingTime: "Segunda à Sexta-Feira das 08:00h às 14:00h",
     address: "Praça 03 de Outubro, 01 - Centro- Marajó",
     phone: "(91) 9192-4572",
@@ -199,9 +203,10 @@ export const sctructureItems = [
     ],
   },
   {
+    photo: Photo,
     name: "Secretaria de Desenvolvimento Econômico",
     id: "04",
-    responsible: "Heli Fábio da Costa Melo 1",
+    responsible: "Heli Fábio da Costa Melo 4",
     attendingTime: "Segunda à Sexta-Feira das 08:00h às 14:00h",
     address: "Praça 03 de Outubro, 01 - Centro- Marajó",
     phone: "(91) 9192-4572",
@@ -263,9 +268,10 @@ export const sctructureItems = [
     ],
   },
   {
+    photo: Photo,
     name: "Secretaria de Assistência Social",
     id: "05",
-    responsible: "Heli Fábio da Costa Melo 1",
+    responsible: "Heli Fábio da Costa Melo 5",
     attendingTime: "Segunda à Sexta-Feira das 08:00h às 14:00h",
     address: "Praça 03 de Outubro, 01 - Centro- Marajó",
     phone: "(91) 9192-4572",
@@ -327,9 +333,10 @@ export const sctructureItems = [
     ],
   },
   {
+    photo: Photo,
     name: "Secretaria de Comunicação",
     id: "06",
-    responsible: "Heli Fábio da Costa Melo 1",
+    responsible: "Heli Fábio da Costa Melo 6",
     attendingTime: "Segunda à Sexta-Feira das 08:00h às 14:00h",
     address: "Praça 03 de Outubro, 01 - Centro- Marajó",
     phone: "(91) 9192-4572",
@@ -391,9 +398,10 @@ export const sctructureItems = [
     ],
   },
   {
+    photo: Photo,
     name: "Secretaria de Desenvolvimento Urbano",
     id: "07",
-    responsible: "Heli Fábio da Costa Melo 1",
+    responsible: "Heli Fábio da Costa Melo 7",
     attendingTime: "Segunda à Sexta-Feira das 08:00h às 14:00h",
     address: "Praça 03 de Outubro, 01 - Centro- Marajó",
     phone: "(91) 9192-4572",
@@ -455,9 +463,10 @@ export const sctructureItems = [
     ],
   },
   {
+    photo: Photo,
     name: "Secretaria de Educação",
     id: "08",
-    responsible: "Heli Fábio da Costa Melo 1",
+    responsible: "Heli Fábio da Costa Melo 8",
     attendingTime: "Segunda à Sexta-Feira das 08:00h às 14:00h",
     address: "Praça 03 de Outubro, 01 - Centro- Marajó",
     phone: "(91) 9192-4572",
@@ -519,9 +528,10 @@ export const sctructureItems = [
     ],
   },
   {
+    photo: Photo,
     name: "Secretaria de Governo",
     id: "09",
-    responsible: "Heli Fábio da Costa Melo 1",
+    responsible: "Heli Fábio da Costa Melo 9",
     attendingTime: "Segunda à Sexta-Feira das 08:00h às 14:00h",
     address: "Praça 03 de Outubro, 01 - Centro- Marajó",
     phone: "(91) 9192-4572",
@@ -583,9 +593,10 @@ export const sctructureItems = [
     ],
   },
   {
+    photo: Photo,
     name: "Secretaria de Meio Ambiente",
     id: "10",
-    responsible: "Heli Fábio da Costa Melo 1",
+    responsible: "Heli Fábio da Costa Melo 10",
     attendingTime: "Segunda à Sexta-Feira das 08:00h às 14:00h",
     address: "Praça 03 de Outubro, 01 - Centro- Marajó",
     phone: "(91) 9192-4572",
@@ -647,9 +658,10 @@ export const sctructureItems = [
     ],
   },
   {
+    photo: Photo,
     name: "Secretaria de Obras e Infraestrutura",
     id: "11",
-    responsible: "Heli Fábio da Costa Melo 1",
+    responsible: "Heli Fábio da Costa Melo 11",
     attendingTime: "Segunda à Sexta-Feira das 08:00h às 14:00h",
     address: "Praça 03 de Outubro, 01 - Centro- Marajó",
     phone: "(91) 9192-4572",
@@ -711,9 +723,10 @@ export const sctructureItems = [
     ],
   },
   {
+    photo: Photo,
     name: "Secretaria de Finanças",
     id: "12",
-    responsible: "Heli Fábio da Costa Melo 1",
+    responsible: "Heli Fábio da Costa Melo 12",
     attendingTime: "Segunda à Sexta-Feira das 08:00h às 14:00h",
     address: "Praça 03 de Outubro, 01 - Centro- Marajó",
     phone: "(91) 9192-4572",
