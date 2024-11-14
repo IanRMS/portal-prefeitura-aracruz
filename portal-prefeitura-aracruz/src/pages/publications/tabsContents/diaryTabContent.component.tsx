@@ -17,7 +17,7 @@ import { SearchButton } from "components/searchButton";
 import { ReactComponent as SearchIcon } from "assets/icons/search-white.svg";
 import Calendar from "assets/icons/calendar.svg";
 import { ReactComponent as Document } from "assets/icons/services-icons/document.svg";
-import { CustomTableHead, ExportText, TabTitle } from "../publications.styles";
+import { CustomTableContainer, CustomTableHead, ExportText, TabTitle } from "../publications.styles";
 import { diaryPublications } from "mocked/diaryPublications";
 import { CustomTablePagination } from "components/tablePagination";
 
@@ -43,99 +43,100 @@ export const DiaryTabContent = () => {
       <Grid item xs={12}>
         <TabTitle>Diário oficial próprio</TabTitle>
       </Grid>
-      <Grid item xs={12}>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <TextField
-              value={searchTerm}
-              variant="outlined"
-              name="search"
-              fullWidth
-              onChange={(e) => setSearchTerm(e.target.value)}
-              label="Buscar por"
-            />
-          </Grid>
-          <Grid item xs={12} md>
-            <InputMask
-              mask={"99/99/9999"}
-              onChange={(e) => setStartDate(e.target.value)}
-              value={startDate}
-            >
-              {(inputProps) => (
-                <TextField
-                  variant="outlined"
-                  fullWidth
-                  label="Data início"
-                  placeholder="dd/mm/aaaa"
-                  {...inputProps}
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="start">
-                        <img src={Calendar} alt="" />
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-              )}
-            </InputMask>
-          </Grid>
-          <Grid item xs={12} md>
-            <InputMask
-              mask={"99/99/9999"}
-              onChange={(e) => setEndDate(e.target.value)}
-              value={endDate}
-            >
-              {(inputProps) => (
-                <TextField
-                  variant="outlined"
-                  fullWidth
-                  label="Data fim"
-                  placeholder="dd/mm/aaaa"
-                  {...inputProps}
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="start">
-                        <img src={Calendar} alt="" />
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-              )}
-            </InputMask>
-          </Grid>
-          <Grid item xs="auto">
-            <SearchButton>
-              <SearchIcon /> Consultar
-            </SearchButton>
-          </Grid>
-        </Grid>
-      </Grid>
-      <div style={{ marginTop: 32 }}>
-        <Grid
-          item
-          container
-          spacing={2}
-          justifyContent="flex-end"
-          alignItems="center"
-        >
-          <Grid item xs="auto">
-            <ExportText>Exportar</ExportText>
-          </Grid>
-          <Grid item xs="auto">
-            <Button startIcon={<Document />}>ODT</Button>
-          </Grid>
-          <Grid item xs="auto">
-            <Button startIcon={<Document />}>JSON</Button>
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Grid container spacing={3}>
+            <Grid item xs={12}>
+              <TextField
+                value={searchTerm}
+                variant="outlined"
+                name="search"
+                fullWidth
+                onChange={(e) => setSearchTerm(e.target.value)}
+                label="Buscar por"
+              />
+            </Grid>
+            <Grid item xs={12} md>
+              <InputMask
+                mask={"99/99/9999"}
+                onChange={(e) => setStartDate(e.target.value)}
+                value={startDate}
+              >
+                {(inputProps) => (
+                  <TextField
+                    variant="outlined"
+                    fullWidth
+                    label="Data início"
+                    placeholder="dd/mm/aaaa"
+                    {...inputProps}
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="start">
+                          <img src={Calendar} alt="" />
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
+                )}
+              </InputMask>
+            </Grid>
+            <Grid item xs={12} md>
+              <InputMask
+                mask={"99/99/9999"}
+                onChange={(e) => setEndDate(e.target.value)}
+                value={endDate}
+              >
+                {(inputProps) => (
+                  <TextField
+                    variant="outlined"
+                    fullWidth
+                    label="Data fim"
+                    placeholder="dd/mm/aaaa"
+                    {...inputProps}
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="start">
+                          <img src={Calendar} alt="" />
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
+                )}
+              </InputMask>
+            </Grid>
+            <Grid item xs="auto">
+              <SearchButton>
+                <SearchIcon /> Consultar
+              </SearchButton>
+            </Grid>
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <TableContainer>
+          <Grid
+            container
+            spacing={2}
+            justifyContent="flex-end"
+            alignItems="center"
+          >
+            <Grid item xs="auto">
+              <ExportText>Exportar</ExportText>
+            </Grid>
+            <Grid item xs="auto">
+              <Button startIcon={<Document />}>ODT</Button>
+            </Grid>
+            <Grid item xs="auto">
+              <Button startIcon={<Document />}>JSON</Button>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={12}>
+          <CustomTableContainer>
             <Table>
               <CustomTableHead>
                 <TableRow>
@@ -169,7 +170,7 @@ export const DiaryTabContent = () => {
                   ))}
               </TableBody>
             </Table>
-          </TableContainer>
+          </CustomTableContainer>
         </Grid>
         <Grid item xs={12} style={{ marginTop: 32 }}>
           <CustomTablePagination
@@ -178,7 +179,7 @@ export const DiaryTabContent = () => {
             setPage={setPage}
           />
         </Grid>
-      </div>
+      </Grid>
     </>
   );
 };

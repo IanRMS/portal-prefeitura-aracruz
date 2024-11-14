@@ -47,3 +47,11 @@ export const MenuItemLabel = styled.span`
   color: var(--neutral);
   margin: 8px 16px;
 `;
+
+export const CustomTableContainer = styled.div`
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--gray-light);
+  border-radius: 8px;
+  box-shadow: none;
+`;

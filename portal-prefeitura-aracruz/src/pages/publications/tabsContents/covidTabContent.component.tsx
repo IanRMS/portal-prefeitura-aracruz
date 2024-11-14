@@ -1,6 +1,7 @@
 import { covidPublications } from "mocked/covidPublications";
 import React, { useEffect, useState } from "react";
 import {
+  CustomTableContainer,
   CustomTableHead,
   ExportText,
   MenuItemLabel,
@@ -19,7 +20,6 @@ import {
   Table,
   TableBody,
   TableCell,
-  TableContainer,
   TableRow,
   TextField,
 } from "@material-ui/core";
@@ -62,117 +62,119 @@ export const CovidTabContent = () => {
       <Grid item xs={12}>
         <TabTitle>Ações Covid-19</TabTitle>
       </Grid>
-      <Grid item xs={12}>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <TextField
-              value={searchTerm}
-              variant="outlined"
-              name="search"
-              fullWidth
-              onChange={(e) => setSearchTerm(e.target.value)}
-              label="Buscar por"
-            />
-          </Grid>
-          <Grid item xs={12} md>
-            <FormControl variant="outlined" fullWidth>
-              <InputLabel id="demo-simple-select-outlined-label">
-                Veículo publicação
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-outlined-label"
-                id="demo-simple-select-outlined"
-                value={pubVehicle}
-                onChange={(e) => setPubVehicle(e.target.value as string)}
-                label="Veículo publicação"
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Grid container spacing={3}>
+            <Grid item xs={12}>
+              <TextField
+                value={searchTerm}
+                variant="outlined"
+                name="search"
+                fullWidth
+                onChange={(e) => setSearchTerm(e.target.value)}
+                label="Buscar por"
+              />
+            </Grid>
+            <Grid item xs={12} md>
+              <FormControl variant="outlined" fullWidth>
+                <InputLabel id="demo-simple-select-outlined-label">
+                  Veículo publicação
+                </InputLabel>
+                <Select
+                  labelId="demo-simple-select-outlined-label"
+                  id="demo-simple-select-outlined"
+                  value={pubVehicle}
+                  onChange={(e) => setPubVehicle(e.target.value as string)}
+                  label="Veículo publicação"
+                >
+                  <MenuItem value="">TODOS</MenuItem>
+                  <MenuItem value="1">PORTAL</MenuItem>
+                  <MenuItem value="2">JORNAL</MenuItem>
+                </Select>
+              </FormControl>
+            </Grid>
+            <Grid item xs={12} md>
+              <InputMask
+                mask={"99/99/9999"}
+                onChange={(e) => setStartDate(e.target.value)}
+                value={startDate}
               >
-                <MenuItem value="">TODOS</MenuItem>
-                <MenuItem value="1">PORTAL</MenuItem>
-                <MenuItem value="2">JORNAL</MenuItem>
-              </Select>
-            </FormControl>
-          </Grid>
-          <Grid item xs={12} md>
-            <InputMask
-              mask={"99/99/9999"}
-              onChange={(e) => setStartDate(e.target.value)}
-              value={startDate}
-            >
-              {(inputProps) => (
-                <TextField
-                  variant="outlined"
-                  fullWidth
-                  label="Data início"
-                  placeholder="dd/mm/aaaa"
-                  {...inputProps}
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="start">
-                        <img src={Calendar} alt="" />
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-              )}
-            </InputMask>
-          </Grid>
-          <Grid item xs={12} md>
-            <InputMask
-              mask={"99/99/9999"}
-              onChange={(e) => setEndDate(e.target.value)}
-              value={endDate}
-            >
-              {(inputProps) => (
-                <TextField
-                  variant="outlined"
-                  fullWidth
-                  label="Data fim"
-                  placeholder="dd/mm/aaaa"
-                  {...inputProps}
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="start">
-                        <img src={Calendar} alt="" />
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-              )}
-            </InputMask>
-          </Grid>
-          <Grid item xs="auto">
-            <SearchButton>
-              <SearchIcon /> Consultar
-            </SearchButton>
+                {(inputProps) => (
+                  <TextField
+                    variant="outlined"
+                    fullWidth
+                    label="Data início"
+                    placeholder="dd/mm/aaaa"
+                    {...inputProps}
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="start">
+                          <img src={Calendar} alt="" />
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
+                )}
+              </InputMask>
+            </Grid>
+            <Grid item xs={12} md>
+              <InputMask
+                mask={"99/99/9999"}
+                onChange={(e) => setEndDate(e.target.value)}
+                value={endDate}
+              >
+                {(inputProps) => (
+                  <TextField
+                    variant="outlined"
+                    fullWidth
+                    label="Data fim"
+                    placeholder="dd/mm/aaaa"
+                    {...inputProps}
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="start">
+                          <img src={Calendar} alt="" />
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
+                )}
+              </InputMask>
+            </Grid>
+            <Grid item xs="auto">
+              <SearchButton>
+                <SearchIcon /> Consultar
+              </SearchButton>
+            </Grid>
           </Grid>
         </Grid>
-      </Grid>
-      <div style={{ marginTop: 32 }}>
-        <Grid
-          container
-          spacing={2}
-          justifyContent="flex-end"
-          alignItems="center"
-        >
-          <Grid item xs="auto">
-            <ExportText>Exportar</ExportText>
-          </Grid>
-          <Grid item xs="auto">
-            <Button startIcon={<Document />}>ODT</Button>
-          </Grid>
-          <Grid item xs="auto">
-            <Button startIcon={<Document />}>JSON</Button>
+        <Grid item xs={12}>
+          <Grid
+            container
+            spacing={2}
+            justifyContent="flex-end"
+            alignItems="center"
+          >
+            <Grid item xs="auto">
+              <ExportText>Exportar</ExportText>
+            </Grid>
+            <Grid item xs="auto">
+              <Button startIcon={<Document />}>ODT</Button>
+            </Grid>
+            <Grid item xs="auto">
+              <Button startIcon={<Document />}>JSON</Button>
+            </Grid>
           </Grid>
         </Grid>
 
         <Grid item xs={12}>
-          <TableContainer>
+          <CustomTableContainer>
             <Table>
               <CustomTableHead>
                 <TableRow>
@@ -180,7 +182,7 @@ export const CovidTabContent = () => {
                   <TableCell width="12%">Número</TableCell>
                   <TableCell width="60%">Descrição</TableCell>
                   <TableCell width="auto">Republicação</TableCell>
-                  <TableCell width="auto">Opções</TableCell>
+                  <TableCell width={60}>Opções</TableCell>
                 </TableRow>
               </CustomTableHead>
               <TableBody>
@@ -200,7 +202,7 @@ export const CovidTabContent = () => {
                   ))}
               </TableBody>
             </Table>
-          </TableContainer>
+          </CustomTableContainer>
         </Grid>
         <Grid item xs={12} style={{ marginTop: 32 }}>
           <CustomTablePagination
@@ -209,7 +211,7 @@ export const CovidTabContent = () => {
             setPage={setPage}
           />
         </Grid>
-      </div>
+      </Grid>
       <Menu
         id="simple-menu"
         anchorEl={anchorEl}
