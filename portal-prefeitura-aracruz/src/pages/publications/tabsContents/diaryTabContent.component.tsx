@@ -7,7 +7,6 @@ import {
   Table,
   TableBody,
   TableCell,
-  TableContainer,
   TableRow,
   TextField,
 } from "@material-ui/core";
@@ -17,7 +16,12 @@ import { SearchButton } from "components/searchButton";
 import { ReactComponent as SearchIcon } from "assets/icons/search-white.svg";
 import Calendar from "assets/icons/calendar.svg";
 import { ReactComponent as Document } from "assets/icons/services-icons/document.svg";
-import { CustomTableContainer, CustomTableHead, ExportText, TabTitle } from "../publications.styles";
+import {
+  CustomTableContainer,
+  CustomTableHead,
+  ExportText,
+  TabTitle,
+} from "../publications.styles";
 import { diaryPublications } from "mocked/diaryPublications";
 import { CustomTablePagination } from "components/tablePagination";
 

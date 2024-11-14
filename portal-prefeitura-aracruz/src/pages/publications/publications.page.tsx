@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import {
   Breadcrumbs,
   Grid,
@@ -15,6 +15,7 @@ import { publicationsTabs } from "mocked/publicationsTabs";
 import { TabsContainer } from "./publications.styles";
 import { DiaryTabContent } from "./tabsContents/diaryTabContent.component";
 import { CovidTabContent } from "./tabsContents/covidTabContent.component";
+import { useParams } from "react-router";
 
 const a11yProps = (index: number) => {
   return {
@@ -23,8 +24,30 @@ const a11yProps = (index: number) => {
   };
 };
 
+const tabsMapping = [
+  {
+    index: 0,
+    value: "diario-oficial",
+  },
+  {
+    index: 1,
+    value: "covid-19",
+  },
+];
+
 export const PublicationsPage = () => {
-  const [activeTab, setActiveTab] = useState<number>(1);
+  const [activeTab, setActiveTab] = useState<number>(0);
+  const { tab } = useParams();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+  useEffect(() => {
+    if (tab) {
+      setActiveTab(tabsMapping.filter((item) => item.value === tab)[0].index);
+    }
+  }, [tab]);
 
   const handleChangeTab = (_event: ChangeEvent<{}>, value: number) => {
     setActiveTab(value);
@@ -65,10 +88,10 @@ export const PublicationsPage = () => {
             </TabsContainer>
           </Grid>
           <Grid item xs={12}>
-            <TabPanel key={0} value={activeTab} index={0}>
+            <TabPanel key={"diario-oficial"} value={activeTab} index={0}>
               <DiaryTabContent />
             </TabPanel>
-            <TabPanel key={1} value={activeTab} index={1}>
+            <TabPanel key={"covid-19"} value={activeTab} index={1}>
               <CovidTabContent />
             </TabPanel>
           </Grid>
