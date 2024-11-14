@@ -39,7 +39,7 @@ export function NewDetailsPage() {
         </Breadcrumbs>
       </BreadCrumsContainer>
       <PageTitle>NOTÍCIAS</PageTitle>
-      <Wrapper style={{ marginTop: 64 }}>
+      <Wrapper>
         <NewDetailsTitle>{newDetails.title}</NewDetailsTitle>
         <NewDetailsText>{newDetails.description}</NewDetailsText>
         <NewDetailsInfo>

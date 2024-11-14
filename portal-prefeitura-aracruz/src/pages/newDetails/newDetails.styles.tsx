@@ -4,8 +4,7 @@ export const NewDetailsTitle = styled.h1`
   color: var(--primary);
   font-size: 32px;
   font-weight: 600;
-  margin-top: -32px;
-  margin-bottom: 16px;
+  margin-bottom: 0px;
 `;
 
 export const NewDetailsText = styled.p`
@@ -14,7 +13,7 @@ export const NewDetailsText = styled.p`
   line-height: 32px;
   color: var(--neutral);
   text-align: justify;
-  margin-top: 56px;
+  margin-top: 12px;
 `;
 
 export const NewDetailsInfo = styled.p`

@@ -14,7 +14,7 @@ export const NewsSection = () => {
       <SectionTitle>Notícias</SectionTitle>
       <NewsContainer>
         {news.slice(0, 4).map((item) => (
-          <New key={item.id}>
+          <New key={item.id} onClick={() => navigate(`/noticias/${item.id}`)}>
             <NewImage src={item.image} alt={item.title} />
             <NewTheme>{item.theme}</NewTheme>
             <NewTitle>{item.title}</NewTitle>
