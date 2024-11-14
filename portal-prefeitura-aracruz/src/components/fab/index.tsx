@@ -7,8 +7,8 @@ interface IFabButton {
 }
 
 const FabButton = styled.button<IFabButton>`
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-radius: 40px;
   border: 1px solid var(--gray-light);
   background: var(--gray-lightest);

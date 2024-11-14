@@ -16,6 +16,7 @@ export const PageContainer = styled.main`
 
   @media (max-width: 768px) {
     width: calc(100vw - 40px);
+    padding: 8px 20px 36px 20px;
     gap: 32px;
   }
 `;
