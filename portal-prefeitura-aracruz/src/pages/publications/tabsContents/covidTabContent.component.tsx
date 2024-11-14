@@ -1,9 +1,21 @@
-import React, { FC, useEffect, useState } from "react";
+import { covidPublications } from "mocked/covidPublications";
+import React, { useEffect, useState } from "react";
+import {
+  CustomTableHead,
+  ExportText,
+  MenuItemLabel,
+  TabTitle,
+} from "../publications.styles";
 import {
   Button,
+  FormControl,
   Grid,
   IconButton,
   InputAdornment,
+  InputLabel,
+  Menu,
+  MenuItem,
+  Select,
   Table,
   TableBody,
   TableCell,
@@ -12,21 +24,28 @@ import {
   TextField,
 } from "@material-ui/core";
 import InputMask from "react-input-mask";
-
+import Calendar from "assets/icons/calendar.svg";
 import { SearchButton } from "components/searchButton";
 import { ReactComponent as SearchIcon } from "assets/icons/search-white.svg";
-import Calendar from "assets/icons/calendar.svg";
 import { ReactComponent as Document } from "assets/icons/services-icons/document.svg";
-import { CustomTableHead, ExportText, TabTitle } from "../publications.styles";
-import { diaryPublications } from "mocked/diaryPublications";
+import { ReactComponent as Options } from "assets/icons/options.svg";
+import { ReactComponent as FileView } from "assets/icons/file-view.svg";
 import { CustomTablePagination } from "components/tablePagination";
 
-export const DiaryTabContent = () => {
+export const CovidTabContent = () => {
   const [page, setPage] = useState<number>(0);
   const [listItems, setListItems] = useState<any>(null as any);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [startDate, setStartDate] = useState<string>("");
   const [endDate, setEndDate] = useState<string>("");
+  const [pubVehicle, setPubVehicle] = useState<string>("");
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+
+  const handleClickMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleCloseMenu = () => setAnchorEl(null);
 
   useEffect(() => {
     setPage(1);
@@ -34,14 +53,14 @@ export const DiaryTabContent = () => {
 
   useEffect(() => {
     setListItems(
-      diaryPublications.filter((item: any) => item.page === page)[0]
+      covidPublications.filter((item: any) => item.page === page)[0]
     );
   }, [page]);
 
   return (
     <>
       <Grid item xs={12}>
-        <TabTitle>Diário oficial próprio</TabTitle>
+        <TabTitle>Ações Covid-19</TabTitle>
       </Grid>
       <Grid item xs={12}>
         <Grid container spacing={3}>
@@ -54,6 +73,24 @@ export const DiaryTabContent = () => {
               onChange={(e) => setSearchTerm(e.target.value)}
               label="Buscar por"
             />
+          </Grid>
+          <Grid item xs={12} md>
+            <FormControl variant="outlined" fullWidth>
+              <InputLabel id="demo-simple-select-outlined-label">
+                Veículo publicação
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-outlined-label"
+                id="demo-simple-select-outlined"
+                value={pubVehicle}
+                onChange={(e) => setPubVehicle(e.target.value as string)}
+                label="Veículo publicação"
+              >
+                <MenuItem value="">TODOS</MenuItem>
+                <MenuItem value="1">PORTAL</MenuItem>
+                <MenuItem value="2">JORNAL</MenuItem>
+              </Select>
+            </FormControl>
           </Grid>
           <Grid item xs={12} md>
             <InputMask
@@ -118,7 +155,6 @@ export const DiaryTabContent = () => {
       </Grid>
       <div style={{ marginTop: 32 }}>
         <Grid
-          item
           container
           spacing={2}
           justifyContent="flex-end"
@@ -134,16 +170,17 @@ export const DiaryTabContent = () => {
             <Button startIcon={<Document />}>JSON</Button>
           </Grid>
         </Grid>
+
         <Grid item xs={12}>
           <TableContainer>
             <Table>
               <CustomTableHead>
                 <TableRow>
                   <TableCell width="12%">Data Publicação</TableCell>
-                  <TableCell width="12%">Número Edição</TableCell>
-                  <TableCell width="10%">Ano</TableCell>
-                  <TableCell width="60%">Ementa</TableCell>
-                  <TableCell width="auto">Ver arquivo</TableCell>
+                  <TableCell width="12%">Número</TableCell>
+                  <TableCell width="60%">Descrição</TableCell>
+                  <TableCell width="auto">Republicação</TableCell>
+                  <TableCell width="auto">Opções</TableCell>
                 </TableRow>
               </CustomTableHead>
               <TableBody>
@@ -152,17 +189,11 @@ export const DiaryTabContent = () => {
                     <TableRow key={item.id}>
                       <TableCell>{item.date}</TableCell>
                       <TableCell>{item.number}</TableCell>
-                      <TableCell>{item.year}</TableCell>
+                      <TableCell>{item.description}</TableCell>
+                      <TableCell>{item.republished ? "Sim" : "Não"}</TableCell>
                       <TableCell>
-                        <span
-                          dangerouslySetInnerHTML={{
-                            __html: item.ement,
-                          }}
-                        />
-                      </TableCell>
-                      <TableCell>
-                        <IconButton>
-                          <Document />
+                        <IconButton onClick={handleClickMenu}>
+                          <Options />
                         </IconButton>
                       </TableCell>
                     </TableRow>
@@ -173,12 +204,26 @@ export const DiaryTabContent = () => {
         </Grid>
         <Grid item xs={12} style={{ marginTop: 32 }}>
           <CustomTablePagination
-            items={diaryPublications}
+            items={covidPublications}
             page={page}
             setPage={setPage}
           />
         </Grid>
       </div>
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleCloseMenu}
+      >
+        <MenuItem onClick={handleCloseMenu}>
+          <FileView /> <MenuItemLabel>Ver arquivo</MenuItemLabel>
+        </MenuItem>
+        <MenuItem onClick={handleCloseMenu}>
+          <Document /> <MenuItemLabel>Detalhes</MenuItemLabel>
+        </MenuItem>
+      </Menu>
     </>
   );
 };

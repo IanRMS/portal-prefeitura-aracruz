@@ -13,9 +13,8 @@ import TabPanel from "components/tabPanel";
 import { Wrapper } from "components/wrapper";
 import { publicationsTabs } from "mocked/publicationsTabs";
 import { TabsContainer } from "./publications.styles";
-import { DiaryTabContent } from "./components/diaryTabContent.component";
-import { diaryPublications } from "mocked/diaryPublications";
-import { CovidTabContent } from "./components/covidTabContent.component";
+import { DiaryTabContent } from "./tabsContents/diaryTabContent.component";
+import { CovidTabContent } from "./tabsContents/covidTabContent.component";
 
 const a11yProps = (index: number) => {
   return {

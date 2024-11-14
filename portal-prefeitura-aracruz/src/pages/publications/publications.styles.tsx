@@ -39,3 +39,11 @@ export const CustomTableHead = styled.thead`
     font-size: 14px;
   }
 `;
+
+export const MenuItemLabel = styled.span`
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22.4px;
+  color: var(--neutral);
+  margin: 8px 16px;
+`;
